@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home - My Final Website</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        max-width: 1320px;
+        margin: auto;
+        background: #f0f0f0;
+      }
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+      nav {
+        background-color: #555;
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem 0;
+      }
+      nav a {
+        color: white;
+        margin: 0 1rem;
+        text-decoration: none;
+      }
+      nav a:hover {
+        color: yellow;
+      }
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+      }
+      .slide {
+        width: 100%;
+        height: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .slide.active {
+        display: block;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .content {
+        padding: 2rem;
+        text-align: center;
+      }
+      .secondary-nav {
+        background-color: #222;
+        color: #ccc;
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+      .secondary-nav a {
+        color: #ccc;
+        margin: 0 0.5rem;
+        text-decoration: none;
+      }
+      .secondary-nav a:hover {
+        color: white;
+      }
+      footer small {
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body onload="startSlider()">
+    <header>
+      <h1>My Final Website</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="table.html">Table</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <div class="slider">
+      <div class="slide active"><img src="img1.jpg" alt="Banner 1" /></div>
+      <div class="slide"><img src="img2.jpg" alt="Banner 2" /></div>
+      <div class="slide"><img src="img3.jpg" alt="Banner 3" /></div>
+    </div>
+
+    <div class="content">
+      <h2>Welcome!</h2>
+      <p>
+        This is the homepage of my final project website. Explore the gallery,
+        check out the table and feel free to contact me!
+      </p>
+      <p>
+        Visit <a href="https://www.mercedes-benz.co.in/passengercars/models/suv/g-class/overview.html" target="_blank">a new window</a> to
+        see my favorite site.
+      </p>
+    </div>
+
+    <footer>
+      <p>
+        My Final Website | 123 Student Lane, Kathmandu, Nepal |
+        <a href="mailto:srohit25@tbc.edu.np" style="color: white"
+          >srohit25@tbc.edu.np</a
+        >
+      </p>
+      <small>&copy; 2025 Rohit Shrestha</small>
+    </footer>
+
+    <div class="secondary-nav">
+      <a href="index.html">Home</a> | <a href="gallery.html">Gallery</a> |
+      <a href="contact.html">Contact</a> | <a href="table.html">Table</a> |
+      <a href="about.html">About</a>
+    </div>
+
+    <script>
+      let current = 0;
+      function startSlider() {
+        const slides = document.querySelectorAll(".slide");
+        setInterval(() => {
+          slides[current].classList.remove("active");
+          current = (current + 1) % slides.length;
+          slides[current].classList.add("active");
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
